@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>CSS Page Transitions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        margin: 0;
+      }
+      nav {
+        background-color: wheat;
+        padding: 8px;
+      }
+      nav ul {
+        display: flex
+        flex-direction: row;
+      }
+      nav ul li {
+        flex: 1;
+        display: inline-block;
+        list-style: none;
+      }
+      nav ul li a {
+        text-decoration: none;
+        border: 2px solid blue;
+        border-radius: 2px;
+        padding: 8px;
+      }
+      nav ul li a:hover {
+        background-color: cyan;
+      }
+
+      #content .page {
+        width: 100%;
+        border: 2px solid brown;
+        border-radius: 8px;
+        text-align: center;
+        margin: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href='#apple'>Apple</a></li>
+        <li><a href='#banana'>Banana</a></li>
+        <li><a href='#carrot'>Carrot</a></li>
+      </ul>
+    </nav>
+    <section id='content'>
+      <div class='page' id='apple'>
+        🍎 Apple 
+      </div>
+      <div class='page' id='banana'>
+        🍌 Banana 
+      </div>
+      <div class='page' id='carrot'>
+        🍎 Carrot
+      </div>
+    </section>
+  </body>
+</html>
+  
