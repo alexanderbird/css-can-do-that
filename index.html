@@ -36,6 +36,33 @@
         text-align: center;
         margin: 16px;
       }
+
+      .page:target {
+        animation: skew-right 0s ease 1s both;
+        background: yellow;
+      }
+
+      .page:not(:target) {
+        animation: skew-left 0s ease 1s both;
+      }
+
+      @keyframes skew-right {
+        0% {
+          transform: rotate(0)
+        }
+        100% {
+          transform: rotate(4deg);
+        }
+      }
+
+      @keyframes skew-left {
+        0% {
+          transform: rotate(0)
+        }
+        100% {
+          transform: rotate(-4deg);
+        }
+      }
     </style>
   </head>
   <body>
