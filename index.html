@@ -6,6 +6,9 @@
       :root {
         --skip-while-initializing: none;
         animation: initialize 0s ease-in-out 2s both;
+        --color-primary: wheat;
+        --color-secondary: #a98d58;
+        --color-ternary: #fbf7f0;
       }
       @keyframes initialize {
         to {
@@ -14,9 +17,10 @@
       }
       body {
         margin: 0;
+        background-color: var(--color-ternary);
       }
       nav {
-        background-color: wheat;
+        background-color: var(--color-primary);
         padding: 8px;
       }
       nav ul {
@@ -33,15 +37,16 @@
       }
       nav ul li a {
         text-decoration: none;
-        border: 2px solid blue;
+        font-size: 3em;
+        border: 2px solid var(--color-secondary);
         border-radius: 2px;
         padding: 8px;
       }
       nav ul li a:hover {
-        background-color: cyan;
+        background-color: var(--color-secondary);
       }
 
-      #content .page {
+      section#content .page {
         border: 2px solid black;
         border-radius: 8px;
         text-align: center;
@@ -49,29 +54,32 @@
       }
 
       .page:target {
-        animation: skew-right 1s ease-in-out 0s both;
-        background: yellow;
+        animation: emphasize 1s ease-in-out 0s both;
       }
 
       .page:not(:target) {
-        animation: skew-left 1s ease-in-out 0s both;
+        animation: de-emphasize 1s ease-in-out 0s both;
       }
 
-      @keyframes skew-right {
+      @keyframes emphasize {
         0% {
           font-size: 1em;
+          background: inherit;
         }
         100% {
           font-size: 2em;
+          background: var(--color-primary);
         }
       }
 
-      @keyframes skew-left {
+      @keyframes de-emphasize {
         0% {
           font-size: var(--skip-while-initializing, 2em);
+          background: var(--skip-while-initializing, var(--color-primary));
         }
         100% {
           font-size: var(--skip-while-initializing, 1em);
+          background: inherit;
         }
       }
     </style>
@@ -79,10 +87,10 @@
   <body>
     <nav>
       <ul>
-        <li><a href='#'>Home</a></li>
-        <li><a href='#apple'>Apple</a></li>
-        <li><a href='#banana'>Banana</a></li>
-        <li><a href='#carrot'>Carrot</a></li>
+        <li><a href='#'>🏠</a></li>
+        <li><a href='#apple'>🍎</a></li>
+        <li><a href='#banana'>🍌</a></li>
+        <li><a href='#carrot'>🥕</a></li>
       </ul>
     </nav>
     <section id='content'>
@@ -93,7 +101,7 @@
         🍌 Banana 
       </div>
       <div class='page' id='carrot'>
-        🍎 Carrot
+        🥕 Carrot
       </div>
     </section>
   </body>
