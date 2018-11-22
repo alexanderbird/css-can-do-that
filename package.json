@@ -1,0 +1,27 @@
+{
+  "name": "css-only-spa-style-multipage-site",
+  "version": "0.0.1",
+  "description": "Can you make a multi-page website with a single html file and CSS (no JavaScript)? Here's a proof of concept.",
+  "main": "html/index.html",
+  "dependencies": {
+    "s3-static-website-deploy": "^1.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "deploy": "s3-static-website-deploy --domain nojs.sandbox.alexanderbird.software --region ca-central-1 --directory html",
+    "start": "cd html && http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexanderbird/css-only-spa-style-multipage-site.git"
+  },
+  "author": "Alexander Bird",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/alexanderbird/css-only-spa-style-multipage-site/issues"
+  },
+  "homepage": "nojs.sandbox.alexanderbird.software"
+}
