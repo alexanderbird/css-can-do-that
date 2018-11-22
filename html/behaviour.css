@@ -1,0 +1,47 @@
+/* Allow any property to be disabled during a window of time from when the page loads
+ ***************************************************************************************/
+:root {
+  --duration-long: 1s;
+  --skip-while-initializing: none;
+  animation: initialize 0s ease-in-out var(--duration-long) both;
+}
+
+@keyframes initialize {
+  to {
+    --skip-while-initializing: unset;
+  }
+}
+
+/* Hide/show pages
+ *******************/
+section:target {
+  animation: emphasize var(--duration-long) ease-in-out 0s both;
+}
+
+section:not(:target) {
+  animation: de-emphasize var(--duration-long) ease-in-out 0s both;
+}
+
+/* Animations
+ ******************/
+@keyframes emphasize {
+  0% {
+    font-size: 1em;
+    background: inherit;
+  }
+  100% {
+    font-size: 2em;
+    background: var(--color-primary);
+  }
+}
+
+@keyframes de-emphasize {
+  0% {
+    font-size: var(--skip-while-initializing, 2em);
+    background: var(--skip-while-initializing, var(--color-primary));
+  }
+  100% {
+    font-size: var(--skip-while-initializing, 1em);
+    background: inherit;
+  }
+}
