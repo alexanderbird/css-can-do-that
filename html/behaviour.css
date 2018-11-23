@@ -28,32 +28,56 @@
  *******************/
 section:not([id]),
 section[id]:target {
-  animation: show var(--duration-long) ease-in-out 0s both;
+  animation: var(--animate-in, show) var(--duration-long) ease-in-out 0s both;
 }
 
 section[id]:target ~ section:not([id]),
 section[id]:not(:target) {
-  animation: hide var(--duration-long) ease-in-out 0s both;
+  animation: var(--animate-out, hide) var(--duration-long) ease-in-out 0s both;
 }
 
-/* Animations
- ******************/
+/* Entrance Animations
+ **********************/
 @keyframes show {
-  0% {
+  from {
     transform: translateX(-100vw);
   }
-  100% {
+  to {
     translateX(0);
   }
 }
 
+@keyframes swirl-in {
+  from {
+    opacity: 0;
+    transform: rotate(720deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+/* Exit Animations
+ ******************/
 @keyframes hide {
-  0% {
+  from {
     visibility: var(--hidden-while-initializing, visible);
     transform: translateX(0);
   }
-  100% {
+  to {
     visibility: var(--hidden-while-initializing, visible);
     transform: translateX(100vw);
+  }
+}
+
+@keyframes drop-out {
+  from {
+    visibility: var(--hidden-while-initializing, visible);
+    transform: translateY(0);
+  }
+  to {
+    visibility: var(--hidden-while-initializing, visible);
+    transform: translateY(100vh);
   }
 }
