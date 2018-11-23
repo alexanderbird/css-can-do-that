@@ -1,15 +1,35 @@
 body {
-  --standard-padding: 8px;
   margin: 0;
-  background-color: var(--color-ternary);
+  background-color: var(--color-tertiary);
+  font-family: var(--font);
+}
+
+code {
+  padding: 2px;
+}
+pre {
+  padding: 4px;
+  overflow: scroll;
+  position: relative;
+}
+pre, code {
+  border-radius: 4px;
+  font-style: normal;
+  font-family: var(--font-code);
+  background-color: var(--color-code-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
 }
 
 nav {
+  --padding: 8px;
   position: absolute;
   top: 0; right: 0; bottom: auto; left: 0;
   height: var(--header-height);
   background-color: var(--color-primary);
-  padding: var(--standard-padding);
+  padding: var(--padding);
   z-index: 1;
 }
 nav ul {
@@ -22,14 +42,14 @@ nav ul li {
   list-style: none;
 }
 nav ul li:not(:last-of-type) {
-  margin-right: 8px;
+  margin-right: var(--padding);
 }
 nav ul li a {
   text-decoration: none;
   font-size: 3em;
   border: 2px solid var(--color-secondary);
   border-radius: 2px;
-  padding: 8px;
+  padding: var(--padding);
 }
 nav ul li a:hover {
   background-color: var(--color-secondary);
@@ -43,11 +63,12 @@ main {
   height: 100%;
 }
 section {
+  --padding: 16px;
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  padding-top: calc(var(--header-height) + 2 * var(--standard-padding));
+  padding-top: var(--header-height);
 }
 
 section .content {
-  padding: 16px;
+  padding: var(--padding);
 }

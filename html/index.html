@@ -7,6 +7,7 @@
     <link rel='stylesheet' href='config.css' />
     <link rel='stylesheet' href='behaviour.css' />
     <link rel='stylesheet' href='aesthetics.css' />
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Nothing+You+Could+Do|Quicksand" rel="stylesheet">
   </head>
   <body>
     <nav>
@@ -19,16 +20,23 @@
     </nav>
     <main>
       <section id='apple'><div class='content'>
-        🍎 Apple 
+        <h1>🍎 Apple</h1>
       </div></section>
       <section id='banana' style='--animate-in: swirl-in'><div class='content'>
-        🍌 Banana 
+        <h1>🍌 Banana</h1>
       </div></section>
       <section id='carrot' style='--animate-out: drop-out'><div class='content'>
-        🥕 Carrot
+        <h1>🥕 Carrot</h1>
       </div></section>
       <section><div class='content'>
-        🏠 Home
+        <h1>🏠 Home</h1>
+        <p>Lorem ipsum <code>border: 1px solid black</code></p>
+        <pre>
+section:not([id]),
+section[id]:target {
+  animation: var(--animate-in, show) var(--duration-long) ease-in-out 0s both;
+}
+        </pre>
       </div></section>
     </main>
   </body>

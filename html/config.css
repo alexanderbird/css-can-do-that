@@ -1,6 +1,10 @@
 :root {
-  --color-primary: wheat;
+  --color-primary: #f5deb3;
   --color-secondary: #a98d58;
-  --color-ternary: #fbf7f0;
+  --color-tertiary: #fbf7f0;
+  --color-code-background: #ffffff;
   --header-height: 92px;
+  --font-display: 'Nothing You Could Do', cursive;
+  --font:'Quicksand', sans-serif;
+  --font-code: 'Cutive Mono', monospace;
 }
