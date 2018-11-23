@@ -2,46 +2,44 @@
  ***************************************************************************************/
 :root {
   --duration-long: 1s;
-  --skip-while-initializing: none;
+  --hidden-while-initializing: hidden;
   animation: initialize 0s ease-in-out var(--duration-long) both;
 }
 
 @keyframes initialize {
   to {
-    --skip-while-initializing: unset;
+    --hidden-while-initializing: unset;
   }
 }
 
 /* Hide/show pages
  *******************/
 section:target {
-  animation: emphasize var(--duration-long) ease-in-out 0s both;
+  animation: show var(--duration-long) ease-in-out 0s both;
 }
 
 section:not(:target) {
-  animation: de-emphasize var(--duration-long) ease-in-out 0s both;
+  animation: hide var(--duration-long) ease-in-out 0s both;
 }
 
 /* Animations
  ******************/
-@keyframes emphasize {
+@keyframes show {
   0% {
-    font-size: 1em;
-    background: inherit;
+    transform: translateX(-100vw);
   }
   100% {
-    font-size: 2em;
-    background: var(--color-primary);
+    translateX(0);
   }
 }
 
-@keyframes de-emphasize {
+@keyframes hide {
   0% {
-    font-size: var(--skip-while-initializing, 2em);
-    background: var(--skip-while-initializing, var(--color-primary));
+    visibility: var(--hidden-while-initializing, visible);
+    transform: translateX(0);
   }
   100% {
-    font-size: var(--skip-while-initializing, 1em);
-    background: inherit;
+    visibility: var(--hidden-while-initializing, visible);
+    transform: translateX(100vw);
   }
 }
