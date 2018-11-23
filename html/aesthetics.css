@@ -1,17 +1,17 @@
 body {
+  --standard-padding: 8px;
   margin: 0;
   background-color: var(--color-ternary);
 }
 
 nav {
-  --padding: 8px;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: var(--header-height);
   background-color: var(--color-primary);
-  padding: var(--padding);
+  padding: var(--standard-padding);
   z-index: 1;
 }
 nav ul {
@@ -53,13 +53,9 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  padding-top: calc(var(--header-height) + 16px);
+  padding-top: calc(var(--header-height) + 2 * var(--standard-padding));
 }
 
 section .content {
-  height: 100%;
-  border: 2px solid black;
-  border-radius: 8px;
-  text-align: center;
-  margin: 16px;
+  padding: 16px;
 }
