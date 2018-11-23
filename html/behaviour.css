@@ -12,13 +12,27 @@
   }
 }
 
-/* Hide/show pages
+/* Hide/Show pages
+ *
+ * section[id] matches non-home pages (they have an id)
+ * section:not([id]) matches the home page (it has no id)
+ *
+ * Show the page if it is
+ *  + home page
+ *  + non-home page that has been targetted
+ *
+ * Hide the page if it is
+ *  + home page not preceeded by a targetted page
+ *  + non-home page that has not been targetted
+ *
  *******************/
-section:target {
+section:not([id]),
+section[id]:target {
   animation: show var(--duration-long) ease-in-out 0s both;
 }
 
-section:not(:target) {
+section[id]:target ~ section:not([id]),
+section[id]:not(:target) {
   animation: hide var(--duration-long) ease-in-out 0s both;
 }
 
