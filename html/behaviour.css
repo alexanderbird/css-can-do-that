@@ -35,6 +35,14 @@ section#landing .content p:nth-of-type(2) {
   animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 2) both);
 }
 
+section#landing .content p:nth-of-type(3) {
+  animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 3) both);
+}
+
+section#landing .content p:nth-of-type(4) {
+  animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 4) both);
+}
+
 /* Hide/Show pages
  *
  * section:not(.landing-page) matches non-home pages

@@ -1,7 +1,6 @@
 /* Global
  *********/
 body {
-  --nav-padding: 8px;
   margin: 0;
   background-color: var(--color-tertiary);
   font-family: var(--font);
@@ -28,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 nav {
-  --padding: var(--nav-padding);
+  --padding: 8px;
   position: absolute;
   top: 0; right: 0; bottom: auto; left: 0;
   height: var(--header-height);
@@ -58,13 +57,16 @@ nav ul li:last-of-type {
   margin-right: auto;
 }
 nav ul li a {
-  text-decoration: none;
   font-size: 3em;
+}
+
+a {
+  text-decoration: none;
   border: 2px solid var(--color-secondary);
   border-radius: 2px;
   padding: var(--padding);
 }
-nav ul li a:hover {
+a:hover {
   background-color: var(--color-secondary);
 }
 
@@ -94,7 +96,6 @@ section .content {
   content: attr(data-surround-with);
   padding: 4px;
   margin: 4px;
-
 }
 
 /* Specific Pages
