@@ -19,22 +19,22 @@ section#carrot {
     var(--when-animating-in, show var(--duration-long) ease-in-out 0s both);
 }
 
-section:not([id]) .content h1 {
+section#landing .content h1 {
   animation: var(--when-animating-in, show 1s ease-in-out 0s both);
 }
 
-section:not([id]) .content > p:nth-of-type(1) {
+section#landing .content > p:nth-of-type(1) {
   animation: var(--when-animating-in, show 1s ease-in-out 1s both);
 }
 
-section:not([id]) .content > p:nth-of-type(2) {
+section#landing .content > p:nth-of-type(2) {
   animation: var(--when-animating-in, show 1s ease-in-out 2s both);
 }
 
 /* Hide/Show pages
  *
- * section[id] matches non-home pages (they have an id)
- * section:not([id]) matches the home page (it has no id)
+ * section:not(.landing-page) matches non-home pages
+ * section.landing-page matches the home page
  *
  * Show the page if it is
  *  + home page
@@ -45,14 +45,14 @@ section:not([id]) .content > p:nth-of-type(2) {
  *  + non-home page that has not been targetted
  *
  *******************/
-section:not([id]),
-section[id]:target {
+section.landing-page,
+section:not(.landing-page):target {
   --when-animating-in: unset;
   --when-animating-out: none;
 }
 
-section[id]:target ~ section:not([id]),
-section[id]:not(:target) {
+section:not(.landing-page):target ~ section.landing-page,
+section:not(.landing-page):not(:target) {
   --when-animating-in: none;
   --when-animating-out: unset;
 }
