@@ -1,4 +1,7 @@
+/* Global
+ *********/
 body {
+  --nav-padding: 8px;
   margin: 0;
   background-color: var(--color-tertiary);
   font-family: var(--font);
@@ -25,13 +28,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 nav {
-  --padding: 8px;
+  --padding: var(--nav-padding);
   position: absolute;
   top: 0; right: 0; bottom: auto; left: 0;
   height: var(--header-height);
   background-color: var(--color-primary);
   padding: var(--padding);
-  z-index: 1;
 }
 nav ul {
   display: flex;
@@ -42,8 +44,18 @@ nav ul li {
   display: inline-block;
   list-style: none;
 }
+nav ul li#logo {
+  margin-right: auto;
+}
+nav ul li#logo * {
+  font-size: unset;
+  margin: unset;
+}
 nav ul li:not(:last-of-type) {
   margin-right: var(--padding);
+}
+nav ul li:last-of-type {
+  margin-right: auto;
 }
 nav ul li a {
   text-decoration: none;
@@ -72,4 +84,28 @@ section {
 
 section .content {
   padding: var(--padding);
+}
+
+[data-surround-with] {
+  line-height: 1em;
+}
+[data-surround-with]:before,
+[data-surround-with]:after {
+  content: attr(data-surround-with);
+  padding: 4px;
+  margin: 4px;
+
+}
+
+/* Specific Pages
+ *****************/
+section#landing {
+  text-align: center;
+}
+
+section#landing .content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

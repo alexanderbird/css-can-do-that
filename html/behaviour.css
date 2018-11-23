@@ -19,16 +19,20 @@ section#carrot {
     var(--when-animating-in, show var(--duration-long) ease-in-out 0s both);
 }
 
+section#landing {
+  animation: var(--when-animating-out, drop-out var(--duration-long) ease-in-out 0s both);
+}
+
 section#landing .content h1 {
-  animation: var(--when-animating-in, show 1s ease-in-out 0s both);
+  animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out 0s both);
 }
 
-section#landing .content > p:nth-of-type(1) {
-  animation: var(--when-animating-in, show 1s ease-in-out 1s both);
+section#landing .content p:nth-of-type(1) {
+  animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 1) both);
 }
 
-section#landing .content > p:nth-of-type(2) {
-  animation: var(--when-animating-in, show 1s ease-in-out 2s both);
+section#landing .content p:nth-of-type(2) {
+  animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 2) both);
 }
 
 /* Hide/Show pages
@@ -57,6 +61,20 @@ section:not(.landing-page):not(:target) {
   --when-animating-out: unset;
 }
 
+/* Allow any property to be disabled during a window of time from when the page loads
+ ***************************************************************************************/
+:root {
+  --duration-long: 0.75s;
+  --hidden-while-initializing: hidden;
+  animation: initialize 0s ease-in-out var(--duration-long) both;
+}
+
+@keyframes initialize {
+  to {
+    --hidden-while-initializing: unset;
+  }
+}
+
 /* Entrance Animations
  **********************/
 @keyframes appear { from {} to {} }
@@ -69,6 +87,16 @@ section:not(.landing-page):not(:target) {
   }
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes swirl-in {
   from {
     opacity: 0;
@@ -77,20 +105,6 @@ section:not(.landing-page):not(:target) {
   to {
     opacity: 1;
     transform: rotate(0);
-  }
-}
-
-/* Allow any property to be disabled during a window of time from when the page loads
- ***************************************************************************************/
-:root {
-  --duration-long: 1s;
-  --hidden-while-initializing: hidden;
-  animation: initialize 0s ease-in-out var(--duration-long) both;
-}
-
-@keyframes initialize {
-  to {
-    --hidden-while-initializing: unset;
   }
 }
 
@@ -117,3 +131,16 @@ section:not(.landing-page):not(:target) {
     transform: translateY(100vh);
   }
 }
+
+@keyframes fade-out {
+  from {
+    visibility: var(--hidden-while-initializing, visible);
+    opacity: 1;
+  }
+
+  to {
+    visibility: var(--hidden-while-initializing, visible);
+    opacity: 0;
+  }
+}
+
