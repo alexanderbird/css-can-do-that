@@ -43,7 +43,7 @@ section[id]:not(:target) {
     transform: translateX(-100vw);
   }
   to {
-    translateX(0);
+    transform: translateX(0);
   }
 }
 
