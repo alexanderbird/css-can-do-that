@@ -1,15 +1,34 @@
-/* Allow any property to be disabled during a window of time from when the page loads
- ***************************************************************************************/
-:root {
-  --duration-long: 1s;
-  --hidden-while-initializing: hidden;
-  animation: initialize 0s ease-in-out var(--duration-long) both;
+/*
+ * Transitions
+ ***************/
+section {
+  animation:
+    var(--when-animating-out, hide 0s linear 0s both),
+    var(--when-animating-in, show 0s linear 0s both);
 }
 
-@keyframes initialize {
-  to {
-    --hidden-while-initializing: unset;
-  }
+section#banana {
+  animation:
+    var(--when-animating-out, hide var(--duration-long) ease-in-out 0s both),
+    var(--when-animating-in, swirl-in var(--duration-long) ease-in-out 0s both);
+}
+
+section#carrot {
+  animation:
+    var(--when-animating-out, drop-out var(--duration-long) ease-in-out 0s both),
+    var(--when-animating-in, show var(--duration-long) ease-in-out 0s both);
+}
+
+section:not([id]) .content h1 {
+  animation: var(--when-animating-in, show 1s ease-in-out 0s both);
+}
+
+section:not([id]) .content > p:nth-of-type(1) {
+  animation: var(--when-animating-in, show 1s ease-in-out 1s both);
+}
+
+section:not([id]) .content > p:nth-of-type(2) {
+  animation: var(--when-animating-in, show 1s ease-in-out 2s both);
 }
 
 /* Hide/Show pages
@@ -28,16 +47,19 @@
  *******************/
 section:not([id]),
 section[id]:target {
-  animation: var(--animate-in, show) var(--duration-long) ease-in-out 0s both;
+  --when-animating-in: unset;
+  --when-animating-out: none;
 }
 
 section[id]:target ~ section:not([id]),
 section[id]:not(:target) {
-  animation: var(--animate-out, hide) var(--duration-long) ease-in-out 0s both;
+  --when-animating-in: none;
+  --when-animating-out: unset;
 }
 
 /* Entrance Animations
  **********************/
+@keyframes appear { from {} to {} }
 @keyframes show {
   from {
     transform: translateX(-100vw);
@@ -55,6 +77,20 @@ section[id]:not(:target) {
   to {
     opacity: 1;
     transform: rotate(0);
+  }
+}
+
+/* Allow any property to be disabled during a window of time from when the page loads
+ ***************************************************************************************/
+:root {
+  --duration-long: 1s;
+  --hidden-while-initializing: hidden;
+  animation: initialize 0s ease-in-out var(--duration-long) both;
+}
+
+@keyframes initialize {
+  to {
+    --hidden-while-initializing: unset;
   }
 }
 
