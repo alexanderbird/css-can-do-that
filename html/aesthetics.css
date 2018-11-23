@@ -6,9 +6,7 @@ body {
 
 nav {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; right: 0; bottom: auto; left: 0;
   height: var(--header-height);
   background-color: var(--color-primary);
   padding: var(--standard-padding);
@@ -39,20 +37,14 @@ nav ul li a:hover {
 
 main {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
 
   min-height: 1vh;
   height: 100%;
 }
 section {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   padding-top: calc(var(--header-height) + 2 * var(--standard-padding));
 }
 
