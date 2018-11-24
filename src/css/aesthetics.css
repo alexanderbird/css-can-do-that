@@ -4,7 +4,7 @@ body {
   margin: 0;
   background-color: var(--color-tertiary);
   font-family: var(--font);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 code {
@@ -12,7 +12,7 @@ code {
 }
 pre {
   padding: 4px;
-  overflow: scroll;
+  overflow-x: scroll;
   position: relative;
 }
 pre, code {

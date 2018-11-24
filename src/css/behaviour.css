@@ -83,36 +83,49 @@ section:not(.landing-page):not(:target) {
 /* Exit Animations
  ******************/
 @keyframes hide {
-  from {
+  0% {
     visibility: var(--hidden-while-initializing, visible);
     transform: translateX(0);
   }
-  to {
+  99% {
     visibility: var(--hidden-while-initializing, visible);
     transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(100vw);
+    visibility: hidden;
   }
 }
 
 @keyframes drop-out {
-  from {
+  0% {
     visibility: var(--hidden-while-initializing, visible);
     transform: translateY(0);
   }
-  to {
+  99% {
     visibility: var(--hidden-while-initializing, visible);
     transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(100vh);
+    visibility: hidden;
   }
 }
 
 @keyframes fade-out {
-  from {
+  0% {
     visibility: var(--hidden-while-initializing, visible);
     opacity: 1;
   }
 
-  to {
+  99% {
     visibility: var(--hidden-while-initializing, visible);
     opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 

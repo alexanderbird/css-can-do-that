@@ -2,6 +2,7 @@ const gulp = require('gulp')
 const autoprefixer = require('gulp-autoprefixer');
 const wrap = require('gulp-wrap');
 const markdown = require('gulp-meta-marked');
+const markdownRenderer = require('./customized-markdown-renderer');
 const extensionReplace = require('gulp-ext-replace');
 const concat = require('gulp-concat');
 const del = require('del');
@@ -17,6 +18,7 @@ gulp.task('clean', () => del(buildDirectory));
 
 gulp.task('build:html', () => gulp.src(articlesGlob)
   .pipe(markdown({
+    renderer: markdownRenderer,
     headerIds: false,
     smartypants: true
   }))
