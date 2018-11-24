@@ -7,42 +7,6 @@ section {
     var(--when-animating-in, show 0s linear 0s both);
 }
 
-section#banana {
-  animation:
-    var(--when-animating-out, hide var(--duration-long) ease-in-out 0s both),
-    var(--when-animating-in, swirl-in var(--duration-long) ease-in-out 0s both);
-}
-
-section#carrot {
-  animation:
-    var(--when-animating-out, drop-out var(--duration-long) ease-in-out 0s both),
-    var(--when-animating-in, show var(--duration-long) ease-in-out 0s both);
-}
-
-section#landing {
-  animation: var(--when-animating-out, drop-out var(--duration-long) ease-in-out 0s both);
-}
-
-section#landing .content h1 {
-  animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out 0s both);
-}
-
-section#landing .content p:nth-of-type(1) {
-  animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 1) both);
-}
-
-section#landing .content p:nth-of-type(2) {
-  animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 2) both);
-}
-
-section#landing .content p:nth-of-type(3) {
-  animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 3) both);
-}
-
-section#landing .content p:nth-of-type(4) {
-  animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 4) both);
-}
-
 /* Hide/Show pages
  *
  * section:not(.landing-page) matches non-home pages
