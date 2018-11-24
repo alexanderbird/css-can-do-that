@@ -22,7 +22,7 @@ pre, code {
   background-color: var(--color-code-background);
 }
 
-nav {
+header {
   --padding: 8px;
   position: absolute;
   top: 0; right: 0; bottom: auto; left: 0;
@@ -30,28 +30,20 @@ nav {
   background-color: var(--color-primary);
   padding: var(--padding);
   z-index: 1;
-}
-nav ul {
+
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-content: center;
 }
-nav ul li {
-  display: inline-block;
-  list-style: none;
+
+header .title {
+  margin: auto;
+  text-align: center;
 }
-nav ul li#logo {
-  margin-right: auto;
-}
-nav ul li#logo * {
-  font-size: unset;
-  margin: unset;
-}
-nav ul li:not(:last-of-type) {
-  margin-right: var(--padding);
-}
-nav ul li:last-of-type {
-  margin-right: auto;
+
+header .title * {
+  margin: 0;
 }
 
 a.button {
