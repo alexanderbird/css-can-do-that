@@ -7,10 +7,18 @@
     "s3-static-website-deploy": "^1.0.0"
   },
   "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-ext-replace": "^0.3.0",
+    "gulp-meta-marked": "^0.1.3",
+    "gulp-wrap": "^0.14.0",
     "http-server": "^0.11.1"
   },
   "scripts": {
     "deploy": "s3-static-website-deploy --domain nojs.sandbox.alexanderbird.software --region ca-central-1 --directory html",
+    "build": "gulp",
     "start": "cd html && http-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

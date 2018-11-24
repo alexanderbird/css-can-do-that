@@ -2,59 +2,44 @@
  * Transitions
  ***************/
 section {
-  -webkit-animation:
-    var(--when-animating-out, hide 0s linear 0s both),
-    var(--when-animating-in, show 0s linear 0s both);
   animation:
     var(--when-animating-out, hide 0s linear 0s both),
     var(--when-animating-in, show 0s linear 0s both);
 }
 
 section#banana {
-  -webkit-animation:
-    var(--when-animating-out, hide var(--duration-long) ease-in-out 0s both),
-    var(--when-animating-in, swirl-in var(--duration-long) ease-in-out 0s both);
   animation:
     var(--when-animating-out, hide var(--duration-long) ease-in-out 0s both),
     var(--when-animating-in, swirl-in var(--duration-long) ease-in-out 0s both);
 }
 
 section#carrot {
-  -webkit-animation:
-    var(--when-animating-out, drop-out var(--duration-long) ease-in-out 0s both),
-    var(--when-animating-in, show var(--duration-long) ease-in-out 0s both);
   animation:
     var(--when-animating-out, drop-out var(--duration-long) ease-in-out 0s both),
     var(--when-animating-in, show var(--duration-long) ease-in-out 0s both);
 }
 
 section#landing {
-  -webkit-animation: var(--when-animating-out, drop-out var(--duration-long) ease-in-out 0s both);
   animation: var(--when-animating-out, drop-out var(--duration-long) ease-in-out 0s both);
 }
 
 section#landing .content h1 {
-  -webkit-animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out 0s both);
   animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out 0s both);
 }
 
 section#landing .content p:nth-of-type(1) {
-  -webkit-animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 1) both);
   animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 1) both);
 }
 
 section#landing .content p:nth-of-type(2) {
-  -webkit-animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 2) both);
   animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 2) both);
 }
 
 section#landing .content p:nth-of-type(3) {
-  -webkit-animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 3) both);
   animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 3) both);
 }
 
 section#landing .content p:nth-of-type(4) {
-  -webkit-animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 4) both);
   animation: var(--when-animating-in, fade-in var(--duration-long) ease-in-out calc(var(--duration-long) * 4) both);
 }
 
@@ -89,14 +74,7 @@ section:not(.landing-page):not(:target) {
 :root {
   --duration-long: 0.75s;
   --hidden-while-initializing: hidden;
-  -webkit-animation: initialize 0s ease-in-out var(--duration-long) both;
   animation: initialize 0s ease-in-out var(--duration-long) both;
-}
-
-@-webkit-keyframes initialize {
-  to {
-    --hidden-while-initializing: unset;
-  }
 }
 
 @keyframes initialize {
@@ -107,36 +85,13 @@ section:not(.landing-page):not(:target) {
 
 /* Entrance Animations
  **********************/
-@-webkit-keyframes appear { from {} to {} }
 @keyframes appear { from {} to {} }
-@-webkit-keyframes show {
-  from {
-    -webkit-transform: translateX(-100vw);
-    transform: translateX(-100vw);
-  }
-  to {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
 @keyframes show {
   from {
-    -webkit-transform: translateX(-100vw);
     transform: translateX(-100vw);
   }
   to {
-    -webkit-transform: translateX(0);
     transform: translateX(0);
-  }
-}
-
-@-webkit-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
   }
 }
 
@@ -150,94 +105,38 @@ section:not(.landing-page):not(:target) {
   }
 }
 
-@-webkit-keyframes swirl-in {
-  from {
-    opacity: 0;
-    -webkit-transform: rotate(720deg);
-    transform: rotate(720deg);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-}
-
 @keyframes swirl-in {
   from {
     opacity: 0;
-    -webkit-transform: rotate(720deg);
     transform: rotate(720deg);
   }
   to {
     opacity: 1;
-    -webkit-transform: rotate(0);
     transform: rotate(0);
   }
 }
 
 /* Exit Animations
  ******************/
-@-webkit-keyframes hide {
-  from {
-    visibility: var(--hidden-while-initializing, visible);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  to {
-    visibility: var(--hidden-while-initializing, visible);
-    -webkit-transform: translateX(100vw);
-    transform: translateX(100vw);
-  }
-}
 @keyframes hide {
   from {
     visibility: var(--hidden-while-initializing, visible);
-    -webkit-transform: translateX(0);
     transform: translateX(0);
   }
   to {
     visibility: var(--hidden-while-initializing, visible);
-    -webkit-transform: translateX(100vw);
     transform: translateX(100vw);
-  }
-}
-
-@-webkit-keyframes drop-out {
-  from {
-    visibility: var(--hidden-while-initializing, visible);
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  to {
-    visibility: var(--hidden-while-initializing, visible);
-    -webkit-transform: translateY(100vh);
-    transform: translateY(100vh);
   }
 }
 
 @keyframes drop-out {
   from {
     visibility: var(--hidden-while-initializing, visible);
-    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
   to {
     visibility: var(--hidden-while-initializing, visible);
-    -webkit-transform: translateY(100vh);
     transform: translateY(100vh);
-  }
-}
-
-@-webkit-keyframes fade-out {
-  from {
-    visibility: var(--hidden-while-initializing, visible);
-    opacity: 1;
-  }
-
-  to {
-    visibility: var(--hidden-while-initializing, visible);
-    opacity: 0;
   }
 }
 
