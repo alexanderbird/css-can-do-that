@@ -33,6 +33,7 @@ nav {
   height: var(--header-height);
   background-color: var(--color-primary);
   padding: var(--padding);
+  z-index: 1;
 }
 nav ul {
   display: flex;
