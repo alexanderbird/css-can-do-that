@@ -2,21 +2,19 @@
 id: landing
 class: landing-page
 ---
-# Motivation
-When I don't read api docs, the code I write ends up way more compliated than it needs to be --
-I build something from scratch because I didn't know it was supported out of the box.
+# This site is a single HTML file, some CSS, but *no JavaScript*
 
-So it is for CSS and JavaScript -- I tend to use JavaScript for *as much* as possible, and CSS for *as little* as possible. 
+I've written it to explore CSS features that could be used instead of JavaScript libraries, and to familiarize myself with CSS animations.
 
-But are there things that I am tempted to use a JavaScript library for that are more appropriate to write in CSS?
+Along the way, I documented my discoveries and the patterns I've used. This site is both an example and documentation.
 
-## This experiment/demo
-Can I build a...
-  - spa-style static website (one html file entry point)
-  - with transitions between pages
-  - without using any JavaScript?
-
-## What I've done
-  - [changing pages](#changing-pages)
-  - [⚡ transitions in and out](#transitions-in-and-out)
+## Read more about
+  - [Changing pages SPA-style](#changing-pages)
+  - [Transitioning in and out of pages](#transitions-in-and-out)
   - [pattern: CSS if/else](#css-if-else)
+
+### Attribution
+ - JavaScript alternatives in CSS inspired by [You Might Not Need JS](http://youmightnotneedjs.com)
+ - Animation ideas from [Animista](http://animista.net/)
+
+

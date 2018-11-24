@@ -3,8 +3,8 @@
  ***************/
 section {
   animation:
-    var(--when-animating-out, hide 0s linear 0s both),
-    var(--when-animating-in, show 0s linear 0s both);
+    var(--when-animating-out, drop-out var(--duration-long) linear 0s both),
+    var(--when-animating-in, fade-in var(--duration-long) linear 0s both);
 }
 
 /* Hide/Show pages

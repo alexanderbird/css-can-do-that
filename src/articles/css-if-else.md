@@ -1,4 +1,4 @@
 ---
 id: css-if-else
 ---
-# CSS if/else
+# Pattern: CSS if/else

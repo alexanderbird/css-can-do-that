@@ -1,8 +1,8 @@
 {
-  "name": "css-only-spa-style-multipage-site",
+  "name": "css-can-do-that",
   "version": "0.0.1",
   "description": "Can you make a multi-page website with a single html file and CSS (no JavaScript)? Here's a proof of concept.",
-  "main": "html/index.html",
+  "main": ".html/index.html",
   "dependencies": {
     "s3-static-website-deploy": "^1.0.0"
   },
@@ -18,9 +18,9 @@
     "http-server": "^0.11.1"
   },
   "scripts": {
-    "deploy": "s3-static-website-deploy --domain nojs.sandbox.alexanderbird.software --region ca-central-1 --directory html",
+    "deploy": "s3-static-website-deploy --domain nojs.sandbox.alexanderbird.software --region ca-central-1 --directory .html",
     "build": "gulp",
-    "start": "cd html && http-server",
+    "start": "cd .html && http-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -6,8 +6,8 @@ const extensionReplace = require('gulp-ext-replace');
 const concat = require('gulp-concat');
 const del = require('del');
 
-const buildDirectory = 'html';
-const articlesGlob = 'src/articles/*.md';
+const buildDirectory = '.html';
+const articlesGlob = ['src/articles/*.md', '!src/articles/home.md', 'src/articles/home.md'];
 const cssGlob = 'src/css/*.css';
 const indexTemplatePath = 'src/index.html';
 const articleTemplatePath = 'src/article.html';
