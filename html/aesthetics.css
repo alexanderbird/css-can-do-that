@@ -61,13 +61,13 @@ nav ul li a {
   font-size: 3em;
 }
 
-a {
+a.button {
   text-decoration: none;
   border: 2px solid var(--color-secondary);
   border-radius: 2px;
   padding: var(--padding);
 }
-a:hover {
+a.button:hover {
   background-color: var(--color-secondary);
 }
 
