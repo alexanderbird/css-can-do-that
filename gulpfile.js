@@ -3,6 +3,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const wrap = require('gulp-wrap');
 const concat = require('gulp-concat');
 const del = require('del');
+const dom = require('gulp-dom');
 
 const buildDirectory = '.html';
 const articlesGlob = ['src/articles/*.html', '!src/articles/home.html', 'src/articles/home.html'];
@@ -15,6 +16,21 @@ gulp.task('clean', () => del(buildDirectory));
 gulp.task('build:html', () => gulp.src(articlesGlob)
   .pipe(concat('index.html'))
   .pipe(wrap({ src: indexTemplatePath }))
+  .pipe(dom(function() {
+    const pre = Array.from(this.querySelectorAll('pre'))
+    const code = Array.from(this.querySelectorAll('code'))
+    pre.concat(code).forEach(element => {
+      const text = element.innerHTML;
+      const escapedText = text.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      const leadingWhiteSpace = escapedText.match(/^ */)[0].length
+      const lines = []
+      const leadingWhiteSpaceRegEx = new RegExp(`^${Array(leadingWhiteSpace).join(' ')}`)
+      escapedText.split('\n').forEach(line => {
+        lines.push(line.replace(leadingWhiteSpaceRegEx, ''))
+      });
+      element.innerHTML = lines.join('\n'); 
+    });
+  }))
   .pipe(htmlbeautify({
     indent_size: 2
   }))

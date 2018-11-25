@@ -105,3 +105,7 @@ section .content {
 .annotated-code > *:not(div):not(pre) {
   display: none;
 }
+
+div > p:first-of-type {
+  margin-top: 0;
+}
