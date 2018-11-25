@@ -62,32 +62,35 @@ section .content {
   justify-items: stretch;
   padding: 4px;
   border: 2px solid var(--color-secondary);
+  border-radius: 2px;
+  margin-top: var(--padding);
 }
 
-.side-by-side > div {
+.side-by-side > *:nth-child(1) {
   margin: 0;
+  margin-bottom: var(--padding);
   flex: 1;
 }
 
-.side-by-side > pre {
+.side-by-side > *:nth-child(2) {
   margin: 0;
-}
-
-.side-by-side ~ .side-by-side {
-  margin-top: var(--padding);
 }
 
 @media (min-width: 700px) {
   .side-by-side {
     flex-direction: row;
   }
-  .side-by-side > pre {
+  .side-by-side > *:nth-child(1) {
+    margin-bottom: 0;
+    margin-right: var(--padding);
+  }
+  .side-by-side > *:nth-child(2) {
     min-width: 300px;
     max-width: 60%;
   }
 }
 @media (min-width: 1000px) {
-  .side-by-side > pre {
+  .side-by-side > *:nth-child(2) {
     flex: 1;
     min-width: unset;
     max-width: unset;
