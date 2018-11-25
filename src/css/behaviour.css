@@ -25,6 +25,7 @@ section:not(.landing-page):not(:target) {
 }
 
 /* Allow any property to be disabled during a window of time from when the page loads
+ * docs_link_755def49
  ***************************************************************************************/
 :root {
   --duration-long: 0.75s;
@@ -36,6 +37,22 @@ section:not(.landing-page):not(:target) {
   to {
     --hidden-while-initializing: unset;
   }
+}
+
+body#demo-of-transition-bug:target {
+  --hidden-while-initializing: visible;
+}
+
+body#demo-of-transition-bug:target:after {
+  content: '⚠ Demo of transition bug -- notice all the pages appearing and transitioning out?';
+  position: fixed;
+  z-index: 3;
+  top: 0; right: 0; bottom: auto; left: 0;
+  height: var(--header-height);
+  color: var(--color-primary);
+  background-color: var(--color-dark-primary);
+  text-align: center;
+  line-height: var(--header-height);
 }
 
 /* Entrance Animations
@@ -72,6 +89,7 @@ section:not(.landing-page):not(:target) {
 }
 
 /* Exit Animations
+ * docs_link_755def49
  ******************/
 @keyframes hide {
   0% {

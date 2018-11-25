@@ -37,5 +37,73 @@
       </pre>
     </div>
     <p>
+      When a page is no longer <code>:target</code>ed, it animates out. The next page that is <code>:target</code>ed
+      is, in turn, animated in. (Refer to <a href='#changing-pages'>Changing Pages</a> for an explanation of the
+      <code>#home-page</code> stuff.)
+    </p>
+    <p>
+      <strong>Problem</strong>: when the page first loads, all but one page are not <code>:target</code>ed, so they
+      animate out. Except that the page must be visible to animate out. The result is that every page is visible
+      and overlaid one above the other, while all but one animates out.
+      (<a href='#demo-of-transition-bug'>demo of this behaviour</a>.)
+    </p>
+    <div class='side-by-side'>
+      <div>
+        <p>
+          One approach to deal with this is to set a CSS custom property to <code>hidden</code> until all the
+          animations are complete.
+        </p>
+        <p>
+          When the page loads, <code>--hidden-while-initializing</code> is <code>hidden</code>.
+          After 1s (or whatever an appropriate delay is based on the speed of the exit animations), we run the
+          <code>initialize</code> animation which unsets <code>--hidden-while-initializing</code>
+        </p>
+      </div>
+      <pre>
+        :root {
+          --hidden-while-initializing: hidden;
+          animation: initialize 0s ease-in-out 1s both;
+        }
+
+        @keyframes initialize {
+          to {
+            --hidden-while-initializing: unset;
+          }
+        }
+      </pre>
+    </div>
+    <p>
+      My first attempt involved using the approach described in
+      <a href='#keeping-it-dry'>DRYing up complex queries</a> to change the value of
+      <code>animations</code> based on the value of <code>--hidden-while-initializing</code>.
+      (To do this, <code>--hidden-while-initializing</code> would have to start as <code>none</code>
+      instead of <code>hidden</code>)
+    </p>
+    <p>
+      That can't work, because as soon as the value of <code>animations</code> changes, the new animation runs --
+      so all we're doing is delaying that flash of all the pages animating out.
+    </p>
+    <div class='side-by-side'>
+      <div>
+        <p>Instead, change the <code>@keyframes</code> based on the value of <code>--hidden-while-initializing</code>.</p>
+        <p>While initializing, the page is hidden (<code>visibility: hidden</code>). Then, it's <code>visible</code></p>
+
+      </div>
+      <pre>
+        @keyframes fade-out {
+          from {
+            visibility: var(--hidden-while-initializing, visible);
+            opacity: 1;
+          }
+
+          to {
+            visibility: var(--hidden-while-initializing, visible);
+            opacity: 0;
+          }
+      </pre>
+    </div>
+
+    <h2>See it in action</h2>
+    <p>In your developer tools, search for <code>docs_link_755def49</code> to find the relevant CSS rules running this site.</p>
   </div>
 </section>
