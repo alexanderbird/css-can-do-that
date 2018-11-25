@@ -66,6 +66,10 @@ a.discrete {
   text-decoration: none;
 }
 
+a:not([class]) {
+  color: var(--color-dark-primary);
+}
+
 main {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
@@ -86,26 +90,46 @@ section .content {
 
 .annotated-code {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: stretch;
+  justify-items: stretch;
   padding: 4px;
   border: 2px solid var(--color-secondary);
 }
 
-.annotated-code > *:nth-of-type(0) {
-  margin-top: -1em;
-}
-
-.annotated-code > *:nth-of-type(0),
-.annotated-code > *:nth-of-type(1) {
+.annotated-code > div {
   margin: 0;
   flex: 1;
-  min-width: 300px;
 }
-.annotated-code > *:not(div):not(pre) {
-  display: none;
+
+.annotated-code > pre {
+  margin: 0;
+}
+
+.annotated-code ~ .annotated-code {
+  margin-top: var(--padding);
+}
+
+@media (min-width: 700px) {
+  .annotated-code {
+    flex-direction: row;
+  }
+  .annotated-code > pre {
+    min-width: 300px;
+  }
 }
 
 div > p:first-of-type {
   margin-top: 0;
+}
+
+ul li {
+  list-style-type: none;
+  position: relative;
+}
+
+ul li:before {
+  content: '\25b8';
+  position: absolute;
+  right: calc(100% + 4px);
 }

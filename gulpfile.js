@@ -42,6 +42,7 @@ gulp.task('build:css', () => gulp.src(cssGlob)
     browsers: ['last 2 versions'],
     cascade: false
   }))
+  .pipe(concat('index.css'))
   .pipe(gulp.dest(buildDirectory))
 );
 

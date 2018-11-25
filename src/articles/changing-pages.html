@@ -1,7 +1,7 @@
 <section id='changing-pages' class=''>
-  Consider...
   <div class='content'>
     <h1>Changing Pages</h1>
+    Consider...
     <pre>
       <div class='page' id='page-1'>
         Page 1 content
@@ -24,7 +24,6 @@
           <a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/CSS/:target'>(MDN docs)</a>.
         </p>
         
-        <p>(And you can change the URL hash with an anchor tag <code><a href='#page-1'>Page 1</a></code></p>
 
         <p>Hide all the <code>.page</code> elements except the active one.</p>
       </div>
@@ -35,21 +34,38 @@
         }
       </pre>
     </div>
+    <div class='annotated-code'>
+      <div>
+        Now we can select/change the active page by changing the URL hash -- with an anchor tag, or by arriving at the site with a certain hash
+        already in the URL.
+      </div>
+      <pre>
+        <a href='#page-1'>Page 1</a>
+      </pre>
+    </div>
 
     <p><strong>Problem</strong>: How do you show a home page when there is no URL hash?</p>
     <div class='annotated-code'>
       <div>
-        <p>Place the home page last among all the page elements.</p>
-        <p>In addition to hiding all pages that aren’t <code>:target</code>ed, hide the home page if it is preceded by any page that is <code>:target</code>ed</p>
-        <p>Use the general sibling selector <code>~</code> <a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator'>(MDN docs)</a></p>
+        <p>
+          In addition to hiding all pages that aren’t <code>:target</code>ed, hide the home page if it is preceded by any page that is <code>:target</code>ed.
+          <ul>
+            <li>This requires placing the home page last among all the page elements.</li>
+            <li>We can do this with the general sibling selector <code>~</code> <a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator'>(MDN docs)</a></li>
+          </ul>
+        </p>
         <p>Note that we also update the original <code>.page:not(:target)</code> to apply to pages except the home page – we show the home page even when it’s not targeted.</p>
       </div>
       <pre>
-        .page:not(#home-page):not(:target),
-        .page:target ~ #home-page {
+        .page:target ~ #home-page,
+        .page:not(#home-page):not(:target) {
           display: none;
         }
       </pre>
     </div>
+
+    <h2>See it in action</h2>
+    <p>In your developer tools, search for <code>afcd9582-0983-44d9-91c3-9c3eeed53053</code> to find the relevant CSS rules running this site.</p>
+    <p>Rather than setting <code>display: none</code>, I set custom CSS properties. Read why on the <a href='#transitions-in-and-out'>Transitions In And Out</a> page</p>
   </div>
 </section>
