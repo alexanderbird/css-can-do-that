@@ -8,10 +8,15 @@ const dom = require('gulp-dom');
 const buildDirectory = '.html';
 const articlesGlob = ['src/articles/*.html', '!src/articles/home.html', 'src/articles/home.html'];
 const cssGlob = 'src/css/*.css';
+const staticAssetsGlob = 'src/assets/*';
 const indexTemplatePath = 'src/index.html';
 const htmlbeautify = require('gulp-html-beautify');
 
 gulp.task('clean', () => del(buildDirectory));
+
+gulp.task('build:static', () => gulp.src(staticAssetsGlob)
+  .pipe(gulp.dest(buildDirectory))
+)
 
 gulp.task('build:html', () => gulp.src(articlesGlob)
   .pipe(concat('index.html'))
@@ -48,7 +53,8 @@ gulp.task('build:css', () => gulp.src(cssGlob)
 
 gulp.task('build', gulp.parallel(
   'build:css',
-  'build:html'
+  'build:html',
+  'build:static'
 ));
 
 gulp.task('default', gulp.series('clean', 'build'));
