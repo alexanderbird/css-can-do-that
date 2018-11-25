@@ -7,21 +7,6 @@ body {
   overflow-x: hidden;
 }
 
-code {
-  padding: 2px;
-}
-pre {
-  padding: 4px;
-  overflow-x: scroll;
-  position: relative;
-}
-pre, code {
-  border-radius: 4px;
-  font-style: normal;
-  font-family: var(--font-code);
-  background-color: var(--color-code-background);
-}
-
 header {
   --padding: 8px;
   position: absolute;
@@ -50,24 +35,6 @@ header .title {
 
 header .title * {
   margin: 0;
-}
-
-a.button {
-  text-decoration: none;
-  border: 2px solid var(--color-secondary);
-  border-radius: 2px;
-  padding: var(--padding);
-}
-a.button:hover {
-  background-color: var(--color-secondary);
-}
-
-a.discrete {
-  text-decoration: none;
-}
-
-a:not([class]) {
-  color: var(--color-dark-primary);
 }
 
 main {
@@ -117,19 +84,4 @@ section .content {
   .annotated-code > pre {
     min-width: 300px;
   }
-}
-
-div > p:first-of-type {
-  margin-top: 0;
-}
-
-ul li {
-  list-style-type: none;
-  position: relative;
-}
-
-ul li:before {
-  content: '\25b8';
-  position: absolute;
-  right: calc(100% + 4px);
 }
