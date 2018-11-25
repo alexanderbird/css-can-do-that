@@ -1,5 +1,5 @@
 {
-  "name": "css-can-do-that",
+  "name": "css-can-do-that-too",
   "version": "0.0.1",
   "description": "Can you make a multi-page website with a single html file and CSS (no JavaScript)? Here's a proof of concept.",
   "main": ".html/index.html",
@@ -17,19 +17,19 @@
     "http-server": "^0.11.1"
   },
   "scripts": {
-    "deploy": "s3-static-website-deploy --domain nojs.sandbox.alexanderbird.software --region ca-central-1 --directory .html",
+    "deploy": "s3-static-website-deploy --domain css-can-do-that-too.alexanderbird.software --region ca-central-1 --directory .html",
     "build": "gulp",
     "start": "cd .html && http-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexanderbird/css-only-spa-style-multipage-site.git"
+    "url": "git+https://github.com/alexanderbird/css-can-do-that-too.git"
   },
   "author": "Alexander Bird",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/alexanderbird/css-only-spa-style-multipage-site/issues"
+    "url": "https://github.com/alexanderbird/css-can-do-that-too/issues"
   },
-  "homepage": "nojs.sandbox.alexanderbird.software"
+  "homepage": "css-can-do-that-too.alexanderbird.software"
 }
