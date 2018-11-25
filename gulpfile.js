@@ -33,7 +33,7 @@ gulp.task('build:html', () => gulp.src(articlesGlob)
       escapedText.split('\n').forEach(line => {
         lines.push(line.replace(leadingWhiteSpaceRegEx, ''))
       });
-      element.innerHTML = lines.join('\n'); 
+      element.innerHTML = lines.join('\n').replace(/ *$/, ''); 
     });
   }))
   .pipe(htmlbeautify({

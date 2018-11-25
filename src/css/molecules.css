@@ -55,7 +55,7 @@ section .content {
   padding: var(--padding);
 }
 
-.annotated-code {
+.side-by-side {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -64,25 +64,32 @@ section .content {
   border: 2px solid var(--color-secondary);
 }
 
-.annotated-code > div {
+.side-by-side > div {
   margin: 0;
   flex: 1;
 }
 
-.annotated-code > pre {
+.side-by-side > pre {
   margin: 0;
 }
 
-.annotated-code ~ .annotated-code {
+.side-by-side ~ .side-by-side {
   margin-top: var(--padding);
 }
 
 @media (min-width: 700px) {
-  .annotated-code {
+  .side-by-side {
     flex-direction: row;
   }
-  .annotated-code > pre {
+  .side-by-side > pre {
     min-width: 300px;
     max-width: 60%;
+  }
+}
+@media (min-width: 1000px) {
+  .side-by-side > pre {
+    flex: 1;
+    min-width: unset;
+    max-width: unset;
   }
 }

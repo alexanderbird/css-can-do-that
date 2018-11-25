@@ -17,7 +17,7 @@
       <strong>Problem</strong>: How do you show only one page, and hide the rest? How do you link to one page in particular?
     </p>
 
-    <div class='annotated-code'>
+    <div class='side-by-side'>
       <div>
         <p>
           The <code>:target</code> pseudo-class matches the element whose <code>id</code> is the same as the current URL hash 
@@ -34,7 +34,7 @@
         }
       </pre>
     </div>
-    <div class='annotated-code'>
+    <div class='side-by-side'>
       <div>
         Now we can select/change the active page by changing the URL hash -- with an anchor tag, or by arriving at the site with a certain hash
         already in the URL.
@@ -45,7 +45,7 @@
     </div>
 
     <p><strong>Problem</strong>: How do you show a home page when there is no URL hash?</p>
-    <div class='annotated-code'>
+    <div class='side-by-side'>
       <div>
         <p>
           In addition to hiding all pages that aren’t <code>:target</code>ed, hide the home page if it is preceded by any page that is <code>:target</code>ed.

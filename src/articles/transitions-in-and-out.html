@@ -1,5 +1,41 @@
 <section id='transitions-in-and-out' class=''>
   <div class='content'>
     <h1>Transitions in and out</h1>
+    Consider...
+    <div class='side-by-side'>
+      <pre>
+        <div class='page' id='page-1'>
+          Page 1 content
+        </div>
+        <div class='page' id='page-2'>
+          Page 2 content
+        </div>
+        <div class='page' id='home'>
+          Home page content
+        </div>
+      </pre>
+      <pre>
+        #home-page,
+        .page:target {
+          animation: fade-in 1s;
+        }
+
+        .page:target ~ #home-page,
+        .page:not(#home-page):not(:target) {
+          animation: fade-out 1s;
+        }
+
+        @keyframes fade-in {
+          from { opacity: 0; } 
+          to { opacity: 1; }
+        }
+
+        @keyframes fade-out {
+          from { opacity: 1; }
+          to { opacity: 0; }
+        }
+      </pre>
+    </div>
+    <p>
   </div>
 </section>
