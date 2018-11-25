@@ -1,5 +1,6 @@
 /*
  * Transitions
+ * docs_link_31919bf0
  ***************/
 section {
   animation:
@@ -8,7 +9,8 @@ section {
 }
 
 /* Hide/Show pages
- * link: afcd9582-0983-44d9-91c3-9c3eeed53053
+ * docs_link_afcd9582
+ * docs_link_31919bf0
  *******************/
 section.landing-page,
 section:not(.landing-page):target {

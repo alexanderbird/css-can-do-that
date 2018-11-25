@@ -38,8 +38,19 @@ a:not([class]) {
   color: var(--color-dark-primary);
 }
 
+p {
+  --vertical-margin: 16px;
+  margin-top: var(--vertical-margin);
+  margin-bottom: var(--vertical-margin);
+}
+
+/* no margin on the first paragraph it it has no previous siblings */
 div > p:first-of-type {
   margin-top: 0;
+}
+
+div > * ~ p:first-of-type {
+  margin-top: var(--vertical-margin);
 }
 
 ul li {

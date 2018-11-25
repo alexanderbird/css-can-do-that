@@ -83,5 +83,6 @@ section .content {
   }
   .annotated-code > pre {
     min-width: 300px;
+    max-width: 60%;
   }
 }

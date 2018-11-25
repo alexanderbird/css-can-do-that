@@ -1,0 +1,92 @@
+<section id='keeping-it-dry' class=''>
+  <div class='content'>
+    <h1>DRYing up complex queries</h1>
+    Consider...
+    <pre>
+      section.landing-page .first-dohickey {
+        animation: fade-in 1s;
+      }
+      section.landing-page .second-dohickey {
+        animation: flash-in 1s;
+      }
+      section.landing-page .third-dohickey {
+        animation: swirl-in 1s;
+      }
+      section:not(.landing-page):target ~ section.landing-page .first-dohickey {
+        animation: fade-out 1s;
+      }
+      section:not(.landing-page):target ~ section.landing-page .second-dohickey {
+        animation: flash-out 1s;
+      }
+      section:not(.landing-page):target ~ section.landing-page .third-dohickey {
+        animation: swirl-out 1s;
+      }
+    </pre>
+    <div>
+      This CSS animates the <code>section.landing-page</code> dohickey children when the home page for this site
+      is shown or hidden. (Well, there are no <code>.*-dohickey</code> elements on the home page, but if there 
+      were this is how we could animate them -- see more in
+      <a href='#transitions-in-and-out'>Transitions In And Out</a>.)
+    </div>
+    <p>
+      <strong>Problem</strong>: That's confusing and hard to change. Imagine writing this for multiple pages
+      (not just the landing page), then discovering you need to change the
+      <code>section:not(.landing-page):target ~ section.landing-page</code> selector? Eugh.
+    </p>
+    <p>
+      <strong>Alternative</strong>: set/unset a
+      <a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/CSS/--*'>CSS custom property</a>
+      once for the top level selector, and use it inside each of the <code>.*-dohickey</code> selectors.
+    </p>
+    <div class='annotated-code'>
+      <div>
+        <p>Use two custom properties, one for indicating we should animate in, another for indicating we should animate out</p>
+        <p><code>unset</code> indicates a truthy value, <code>none</code> indicates a falsy value.</p>
+
+        <p>
+          For each <code>.*-dohickey</code>, coalesce the relevant variable. If it's <code>none</code>,
+          there's nothing to do because the variable is already set, and <code>animation: none;</code> is a noop.
+          If it's <code>unset</code> then the variable has no value, and the <code>var</code> function will fallback
+          to whatever coalesced value you provided.
+          (<a target='_blank' href='https://drafts.csswg.org/css-variables/#using-variables'>CSS Working Group spec</a>)
+        </p>
+      </div>
+      <pre>
+        section.landing-page {
+          --when-animating-in: unset;
+          --when-animating-out: none;
+        }
+
+        section:not(.landing-page):target ~ section.landing-page {
+          --when-animating-in: none;
+          --when-animating-out: unset;
+        }
+
+        .first-dohickey {
+          animation:
+            var(--when-animating-in, fade-in 1s),
+            var(--when-animating-out, fade-out 1s);
+        }
+
+        .second-dohickey {
+          animation:
+            var(--when-animating-in, flash-in 1s),
+            var(--when-animating-out, flash-out 1s);
+        }
+
+        .third-dohickey {
+          animation:
+            var(--when-animating-in, swirl-in 1s),
+            var(--when-animating-out, swirl-out 1s);
+        }
+      </pre>
+    </div>
+    <p>
+      We have now separated the business of deciding when to animate in or out with the business of how to
+      animate in or out.
+    </p>
+
+    <h2>See it in action</h2>
+    <p>In your developer tools, search for <code>docs_link_31919bf0</code> to find the relevant CSS rules running this site.</p>
+  </div>
+</section>
