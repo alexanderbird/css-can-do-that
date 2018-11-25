@@ -13,8 +13,9 @@ Along the way, I documented my discoveries and the patterns I've used. This site
   - [Transitioning in and out of pages](#transitions-in-and-out)
   - [pattern: CSS if/else](#css-if-else)
 
-### Attribution
- - JavaScript alternatives in CSS inspired by [You Might Not Need JS](http://youmightnotneedjs.com)
- - Animation ideas from [Animista](http://animista.net/)
+### Inspired By
+ - Use of `:target` described in [You Might Not Need JS](http://youmightnotneedjs.com)
+ - Use of CSS custom properties / variables described in [The CSS attr() function got nothin’ on custom properties](https://css-tricks.com/css-attr-function-got-nothin-custom-properties/)
+ - CSS animation ideas in [Animista](http://animista.net/) (a beautiful interface for exploring animations and generating sample CSS)
 
 

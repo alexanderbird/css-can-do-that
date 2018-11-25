@@ -83,3 +83,25 @@ section {
 section .content {
   padding: var(--padding);
 }
+
+.annotated-code {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 4px;
+  border: 2px solid var(--color-secondary);
+}
+
+.annotated-code > *:nth-of-type(0) {
+  margin-top: -1em;
+}
+
+.annotated-code > *:nth-of-type(0),
+.annotated-code > *:nth-of-type(1) {
+  margin: 0;
+  flex: 1;
+  min-width: 300px;
+}
+.annotated-code > *:not(div):not(pre) {
+  display: none;
+}

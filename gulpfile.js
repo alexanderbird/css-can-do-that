@@ -19,6 +19,8 @@ gulp.task('clean', () => del(buildDirectory));
 gulp.task('build:html', () => gulp.src(articlesGlob)
   .pipe(markdown({
     renderer: markdownRenderer,
+    gfm: true,
+    breaks: true,
     headerIds: false,
     smartypants: true
   }))
