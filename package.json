@@ -17,19 +17,19 @@
     "http-server": "^0.11.1"
   },
   "scripts": {
-    "deploy": "s3-static-website-deploy --domain csscandothattoo.alexanderbird.software --region ca-central-1 --directory .html",
+    "deploy": "s3-static-website-deploy --domain csscandothat.alexanderbird.software --region ca-central-1 --directory .html",
     "build": "gulp",
     "start": "cd .html && http-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexanderbird/css-can-do-that-too.git"
+    "url": "git+https://github.com/alexanderbird/css-can-do-that.git"
   },
   "author": "Alexander Bird",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/alexanderbird/css-can-do-that-too/issues"
+    "url": "https://github.com/alexanderbird/css-can-do-that/issues"
   },
-  "homepage": "csscandothattoo.alexanderbird.software"
+  "homepage": "csscandothat.alexanderbird.software"
 }
