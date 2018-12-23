@@ -135,22 +135,22 @@ ul.row-of-links > li:before {
 
 #svg__page-transitions:hover #left-window,
 #svg__page-transitions:active #left-window {
-  animation: svg-fade-out 4s infinite 2s;
+  animation: svg-fade-out 2s infinite 2s;
 }
 
 #svg__page-transitions:hover #right-window,
 #svg__page-transitions:active #right-window {
-  animation: svg-fade-out 4s infinite;
+  animation: svg-fade-out 2s infinite;
 }
 
 #svg__changing-pages:hover #left-window,
 #svg__changing-pages:active #left-window {
-  animation: svg-cut-over 4s infinite;
+  animation: svg-cut-over 2s infinite;
 }
 
 #svg__changing-pages:hover #right-window,
 #svg__changing-pages:active #right-window {
-  animation: svg-cut-over-inverse 4s infinite;
+  animation: svg-cut-over-inverse 2s infinite;
 }
 
 @keyframes svg-cut-over {
