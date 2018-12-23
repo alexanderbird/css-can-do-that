@@ -64,3 +64,13 @@ ul li:before {
   right: calc(100% + 4px);
   opacity: 0.25;
 }
+
+.icon-anchor {
+  display: block;
+}
+
+.icon-anchor__label {
+  text-align: center;
+}
+
+  

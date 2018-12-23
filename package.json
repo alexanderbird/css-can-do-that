@@ -12,6 +12,7 @@
     "gulp-autoprefixer": "^6.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-dom": "^1.0.0",
+    "gulp-embed-svg": "^1.0.3",
     "gulp-html-beautify": "^1.0.1",
     "gulp-wrap": "^0.14.0",
     "http-server": "^0.11.1"

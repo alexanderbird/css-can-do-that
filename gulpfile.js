@@ -4,6 +4,7 @@ const wrap = require('gulp-wrap');
 const concat = require('gulp-concat');
 const del = require('del');
 const dom = require('gulp-dom');
+const embedSvg = require('gulp-embed-svg');
 
 const buildDirectory = '.html';
 const articlesGlob = ['src/articles/*.html', '!src/articles/home.html', 'src/articles/home.html'];
@@ -36,6 +37,7 @@ gulp.task('build:html', () => gulp.src(articlesGlob)
       element.innerHTML = lines.join('\n').replace(/ *$/, ''); 
     });
   }))
+  .pipe(embedSvg({ root: 'src/inline-assets' }))
   .pipe(htmlbeautify({
     indent_size: 2
   }))
