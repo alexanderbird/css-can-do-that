@@ -11,6 +11,12 @@
         <path d="M125.745,5.487 C134.096,5.487 140.865,10.665 140.865,17.052 L140.865,40.1 L7.34,40.1 L7.34,17.051 C7.34,10.665 14.11,5.487 22.46,5.487 L125.745,5.487 z" fill="#FFFFFF"/>
         <path d="M125.745,5.487 C134.096,5.487 140.865,10.665 140.865,17.052 L140.865,40.1 L7.34,40.1 L7.34,17.051 C7.34,10.665 14.11,5.487 22.46,5.487 L125.745,5.487 z" fill-opacity="0" stroke="#000000" stroke-width="4"/>
       </g>
+      <text transform="matrix(1, 0, 0, 1, 21.355, 23.18)" id="title">
+        <tspan x="-4.801" y="3.5" font-family="CourierNewPS-BoldMT" font-size="16" fill="#000000">A</tspan>
+      </text>
+      <text transform="matrix(1, 0, 0, 1, 62.451, 148.297)" id="anchor-text">
+        <tspan x="-46.208" y="-9" font-family="CourierNewPS-BoldMT" font-size="14" fill="#000000">&lt;a href=#B&gt;</tspan>
+      </text>
     </g>
     <g id="right-window">
       <g>
@@ -21,13 +27,13 @@
         <path d="M235.817,58.719 C244.167,58.719 250.936,63.896 250.936,70.283 L250.936,93.332 L117.412,93.332 L117.412,70.283 C117.412,63.896 124.181,58.719 132.532,58.719 L235.817,58.719 z" fill="#FFFFFF"/>
         <path d="M235.817,58.719 C244.167,58.719 250.936,63.896 250.936,70.283 L250.936,93.332 L117.412,93.332 L117.412,70.283 C117.412,63.896 124.181,58.719 132.532,58.719 L235.817,58.719 z" fill-opacity="0" stroke="#000000" stroke-width="4"/>
       </g>
+      <text transform="matrix(1, 0, 0, 1, 132.064, 76.247)" id="title">
+        <tspan x="-4.801" y="3.5" font-family="CourierNewPS-BoldMT" font-size="16" fill="#000000">B</tspan>
+      </text>
     </g>
-    <g id="arrow">
-      <g>
-        <path d="M159.418,164.6 L187.161,186.165 L154.614,199.409 z" fill="#FFFFFF"/>
-        <path d="M159.418,164.6 L187.161,186.165 L154.614,199.409 z" fill-opacity="0" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-      </g>
-      <path d="M156.904,181.818 C124.959,176.181 108.047,110.412 69.839,106.027" fill-opacity="0" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+    <g id="cursor">
+      <path d="M71.55,142.301 L111.661,163.72 L98.068,169.33 L111.77,185.041 L105.373,190.701 L91.748,174.202 L82.697,185.463 L71.55,142.301 z" fill="#FFFFFF"/>
+      <path d="M71.55,142.301 L111.661,163.72 L98.068,169.33 L111.77,185.041 L105.373,190.701 L91.748,174.202 L82.697,185.463 L71.55,142.301 z" fill-opacity="0" stroke="#000000" stroke-width="3"/>
     </g>
   </g>
 </svg>
