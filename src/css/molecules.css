@@ -144,7 +144,7 @@ ul.row-of-links > li:before {
 }
 
 #svg__changing-pages {
-  --animation-duration: 2s;
+  --animation-duration: 4s;
 }
 
 #svg__changing-pages:hover #left-window,
