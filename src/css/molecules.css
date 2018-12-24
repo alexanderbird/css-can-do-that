@@ -122,3 +122,11 @@ ul.row-of-links > li:before {
     margin-top: auto;
   }
 }
+
+footer {
+  display: flex;
+  justify-items: center;
+}
+footer > * {
+  margin: auto;
+}

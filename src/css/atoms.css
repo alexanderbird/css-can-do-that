@@ -23,7 +23,7 @@ pre, code {
 a.button {
   text-decoration: none;
   border: 2px solid var(--color-secondary);
-  border-radius: 2px;
+  border-radius: 8px;
   padding: var(--padding);
 }
 a.button:hover {
@@ -112,4 +112,10 @@ ul li:before {
 .docs-link {
   padding-top: 16px;
   text-align: center;
+}
+
+svg.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
 }
