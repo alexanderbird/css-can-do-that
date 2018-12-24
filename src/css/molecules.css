@@ -135,7 +135,7 @@ ul.row-of-links > li:before {
 
 #svg__page-transitions:hover #left-window,
 #svg__page-transitions:active #left-window {
-  animation: svg-fade-out 2s infinite 2s;
+  animation: svg-fade-out 2s infinite 1s;
 }
 
 #svg__page-transitions:hover #right-window,
