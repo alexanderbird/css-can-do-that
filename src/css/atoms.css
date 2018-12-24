@@ -73,4 +73,18 @@ ul li:before {
   text-align: center;
 }
 
-  
+#home-link {
+  --height-and-width: 48px;
+  width: var(--height-and-width);
+  height: var(--height-and-width);
+  padding: 8px;
+  position: relative;
+}
+
+#logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
