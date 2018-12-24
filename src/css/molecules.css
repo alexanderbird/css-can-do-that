@@ -102,17 +102,23 @@ ul.row-of-links {
   flex-direction: column;
 }
 
-@media (min-width: 1000px) {
-  ul.row-of-links {
-    flex-direction: row;
-  }
-}
 ul.row-of-links > li {
   text-decoration: none;
   margin: auto;
+  margin-top: 32px;
   flex: 1;
 }
+
 ul.row-of-links > li:before {
   content: unset;
 }
 
+@media (min-width: 1000px) {
+  ul.row-of-links {
+    flex-direction: row;
+  }
+
+  ul.row-of-links > li {
+    margin-top: auto;
+  }
+}
