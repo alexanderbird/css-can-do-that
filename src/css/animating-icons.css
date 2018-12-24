@@ -15,14 +15,45 @@
   }
 }
 
+#svg__page-transitions {
+  --animation-duration: 4s;
+}
+
 #svg__page-transitions:hover #left-window,
 #svg__page-transitions:active #left-window {
-  animation: svg-fade-out 2s infinite 1s;
+  --slide-direction: 1;
+  animation: svg-slide-in-out var(--animation-duration) infinite;
 }
 
 #svg__page-transitions:hover #right-window,
 #svg__page-transitions:active #right-window {
-  animation: svg-fade-out 2s infinite;
+  --slide-direction: -1;
+  animation: svg-slide-in-out var(--animation-duration) infinite;
+  animation-delay: calc(var(--animation-duration) / -2);
+}
+
+#svg__page-transitions:hover .cursor,
+#svg__page_transitions:active .cursor {
+  --click-size: 4px;
+  --x-shift: 106px;
+  --y-shift: 44px;
+  animation: move-back-and-forth-and-click var(--animation-duration) infinite;
+}
+
+@keyframes svg-slide-in-out {
+  0% { transform: translateY(0); }
+  29% { transform: translateY(0); }
+  50% { transform: translateY(calc(var(--slide-direction) * -100%)) }
+  51% { visibility: hidden; }
+  79% {
+    transform: translateY(calc(var(--slide-direction) * 100%));
+    visibility: hidden;
+  }
+  80% {
+    transform: translateY(calc(var(--slide-direction) * 100%));
+    visibility: visible;
+  }
+  100% { transform: translateY(0); }
 }
 
 #svg__changing-pages {
@@ -36,11 +67,12 @@
 
 #svg__changing-pages:hover #right-window,
 #svg__changing-pages:active #right-window {
-  animation: svg-cut-over var(--animation-duration) infinite calc(var(--animation-duration) / -2);
+  animation: svg-cut-over var(--animation-duration) infinite;
+  animation-delay: calc(var(--animation-duration) / -2);
 }
 
-#svg__changing-pages:hover #cursor,
-#svg__changing-pages:active #cursor {
+#svg__changing-pages:hover .cursor,
+#svg__changing-pages:active .cursor {
   --click-size: 4px;
   --x-shift: 106px;
   --y-shift: 44px;

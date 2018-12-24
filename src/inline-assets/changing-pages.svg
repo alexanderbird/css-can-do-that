@@ -53,7 +53,7 @@
         </g>
       </g>
     </g>
-    <g id="cursor">
+    <g id="cursor" class='cursor'>
       <path d="M 72 136 L 91.946 146.651 L 85.187 149.44 L 92 157.253 L 88.819 160.068 L 82.044 151.862 L 77.542 157.462 L 72 136 Z" fill="#FFFFFF" style="stroke: rgb(0, 0, 0); stroke-width: 2px;"/>
     </g>
   </g>
