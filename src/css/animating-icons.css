@@ -58,12 +58,14 @@
 
 @keyframes move-back-and-forth-and-click {
   0% { transform: none; }
+  10% { transform: none; }
   25% { transform: translateY(var(--click-size)); }
-  30% { transform: none; }
+  26% { transform: none; }
   35% { transform: none; }
   55% { transform: translateX(var(--x-shift)) translateY(var(--y-shift)); }
+  60% { transform: translateX(var(--x-shift)) translateY(var(--y-shift)); }
   75% { transform: translateX(var(--x-shift)) translateY(calc(var(--y-shift) + var(--click-size))); }
-  80% { transform: translateX(var(--x-shift)) translateY(var(--y-shift)); }
+  76% { transform: translateX(var(--x-shift)) translateY(var(--y-shift)); }
   85% { transform: translateX(106px) translateY(44px); }
   100% { transform: none; }
 }
