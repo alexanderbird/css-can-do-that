@@ -1,5 +1,5 @@
-#svg__keeping-it-dry:hover #verbose,
-#svg__keeping-it-dry:active #verbose {
+#svg__avoiding-repetition:hover #verbose,
+#svg__avoiding-repetition:active #verbose {
   animation: svg-fade-out 4s infinite;
 }
 
@@ -15,24 +15,24 @@
   }
 }
 
-#svg__page-transitions {
+#svg__page-animations {
   --animation-duration: 4s;
 }
 
-#svg__page-transitions:hover #left-window,
-#svg__page-transitions:active #left-window {
+#svg__page-animations:hover #left-window,
+#svg__page-animations:active #left-window {
   --slide-direction: 1;
   animation: svg-slide-in-out var(--animation-duration) infinite;
 }
 
-#svg__page-transitions:hover #right-window,
-#svg__page-transitions:active #right-window {
+#svg__page-animations:hover #right-window,
+#svg__page-animations:active #right-window {
   --slide-direction: -1;
   animation: svg-slide-in-out var(--animation-duration) infinite;
   animation-delay: calc(var(--animation-duration) / -2);
 }
 
-#svg__page-transitions:hover .cursor,
+#svg__page-animations:hover .cursor,
 #svg__page_transitions:active .cursor {
   --click-size: 4px;
   --x-shift: 106px;
