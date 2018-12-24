@@ -1,5 +1,5 @@
-#svg__avoiding-repetition:hover #verbose,
-#svg__avoiding-repetition:active #verbose {
+.icon-anchor:hover #svg__avoiding-repetition #verbose,
+.icon-anchor:active #svg__avoiding-repetition #verbose {
   animation: svg-fade-out 4s infinite;
 }
 
@@ -19,21 +19,21 @@
   --animation-duration: 4s;
 }
 
-#svg__page-animations:hover #left-window,
-#svg__page-animations:active #left-window {
+.icon-anchor:hover #svg__page-animations #left-window,
+.icon-anchor:active #svg__page-animations #left-window {
   --slide-direction: 1;
   animation: svg-slide-in-out var(--animation-duration) infinite;
 }
 
-#svg__page-animations:hover #right-window,
-#svg__page-animations:active #right-window {
+.icon-anchor:hover #svg__page-animations #right-window,
+.icon-anchor:active #svg__page-animations #right-window {
   --slide-direction: -1;
   animation: svg-slide-in-out var(--animation-duration) infinite;
   animation-delay: calc(var(--animation-duration) / -2);
 }
 
-#svg__page-animations:hover .cursor,
-#svg__page_transitions:active .cursor {
+.icon-anchor:hover #svg__page-animations .cursor,
+.icon-anchor:active #svg__page_transitions .cursor {
   --click-size: 4px;
   --x-shift: 106px;
   --y-shift: 44px;
@@ -60,19 +60,19 @@
   --animation-duration: 4s;
 }
 
-#svg__changing-pages:hover #left-window,
-#svg__changing-pages:active #left-window {
+.icon-anchor:hover #svg__changing-pages #left-window,
+.icon-anchor:active #svg__changing-pages #left-window {
   animation: svg-cut-over var(--animation-duration) infinite;
 }
 
-#svg__changing-pages:hover #right-window,
-#svg__changing-pages:active #right-window {
+.icon-anchor:hover #svg__changing-pages #right-window,
+.icon-anchor:active #svg__changing-pages #right-window {
   animation: svg-cut-over var(--animation-duration) infinite;
   animation-delay: calc(var(--animation-duration) / -2);
 }
 
-#svg__changing-pages:hover .cursor,
-#svg__changing-pages:active .cursor {
+.icon-anchor:hover #svg__changing-pages .cursor,
+.icon-anchor:active #svg__changing-pages .cursor {
   --click-size: 4px;
   --x-shift: 106px;
   --y-shift: 44px;
