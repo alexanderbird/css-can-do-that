@@ -22,6 +22,7 @@ gulp.task('build:static', () => gulp.src(staticAssetsGlob)
 gulp.task('build:html', () => gulp.src(articlesGlob)
   .pipe(concat('index.html'))
   .pipe(wrap({ src: indexTemplatePath }))
+  .pipe(embedSvg({ root: 'src/inline-assets' }))
   .pipe(dom(function() {
     const pre = Array.from(this.querySelectorAll('pre'))
     const code = Array.from(this.querySelectorAll('code'))
@@ -37,7 +38,6 @@ gulp.task('build:html', () => gulp.src(articlesGlob)
       element.innerHTML = lines.join('\n').replace(/ *$/, ''); 
     });
   }))
-  .pipe(embedSvg({ root: 'src/inline-assets' }))
   .pipe(htmlbeautify({
     indent_size: 2
   }))
