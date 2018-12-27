@@ -55,14 +55,20 @@
         </p>
         <p>
           When the page loads, <code>--hidden-while-initializing</code> is <code>hidden</code>.
-          After 1s (or whatever an appropriate delay is based on the speed of the exit animations), we run the
-          <code>initialize</code> animation which unsets <code>--hidden-while-initializing</code>
+          We run the <code>initialize</code> animation to unset <code>--hidden-while-initializing</code> after a delay.
+        </p>
+        <p>
+          The <code>initialize</code> animation does nothing for the duration of the animation,
+          and sets the <code>to</code> values at the end of the animation. (It behaves this way because of
+          the <code>steps(1, end)</code> timing function, which divides the animation into a single step. 
+          <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function#The_steps()_class_of_timing_functions'>
+          MDN docs on <code>steps()</code> as a timing function</a>
         </p>
       </div>
       <pre>
         :root {
           --hidden-while-initializing: hidden;
-          animation: initialize 0s ease-in-out 1s both;
+          animation: initialize 1s steps(1, end);
         }
 
         @keyframes initialize {
@@ -70,6 +76,36 @@
             --hidden-while-initializing: unset;
           }
         }
+      </pre>
+    </div>
+    <div class='side-by-side'>
+      <div>
+        <p>
+          Note that at the time of writing this this seems to only work on Chrome &mdash; as discussed in this 
+          <a href='https://github.com/w3c/css-houdini-drafts/issues/137'>WC3 spec discussion</a>, custom properties
+          cannot be interpolated in animations. Once the <code>@property</code> rule is supported (not even on caniuse
+          yet, it seems <a href='https://github.com/Fyrd/caniuse/issues/4420'>GitHub request to ad it to caniuse</a>),
+          that ought to make it possible to interpolate the values in animations.
+        </p>
+
+        <p>
+          I didn't include this JavaScript alternative in this demo so that I could say "zero JavaScript" on the 
+          landing page, but if you can't wait for the full browser support you can replace the <code>initialize</code>
+          animation with the following JavaScript.
+        </p>
+      </div>
+      <pre>
+        document.addEventListener('DOMContentLoaded', () => {
+          const initializationDelay = 1000
+          setTimeout(() => {
+            const rootStyle = document.documentElement.style
+            rootStyle.removeProperty('--hidden-when-initializing')
+            // also you can use:
+            //   rootStyle.setProperty('--property-name', 'value')
+            // if there are custom properties whose values you want to
+            // change after the initialization delay
+          }, initializationDelay)
+        })
       </pre>
     </div>
     <p>
