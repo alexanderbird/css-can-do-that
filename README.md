@@ -2,7 +2,7 @@
 _An experiment; a demo; a guide_
 
 The purpose of this site is to document it's own construction; see it in action at
-http://css-can-do-that.alexanderbird.software
+http://csscandothat.alexanderbird.software
 
 ## Building from source
 
