@@ -23,21 +23,7 @@ gulp.task('build:html', () => gulp.src(articlesGlob)
   .pipe(concat('index.html'))
   .pipe(wrap({ src: indexTemplatePath }))
   .pipe(embedSvg({ root: 'src/inline-assets' }))
-  .pipe(dom(function() {
-    const pre = Array.from(this.querySelectorAll('pre'))
-    const code = Array.from(this.querySelectorAll('code'))
-    pre.concat(code).forEach(element => {
-      const text = element.innerHTML;
-      const escapedText = text.replace(/</g, '&lt;').replace(/>/g, '&gt;')
-      const leadingWhiteSpace = escapedText.match(/^ */)[0].length
-      const lines = []
-      const leadingWhiteSpaceRegEx = new RegExp(`^${Array(leadingWhiteSpace).join(' ')}`)
-      escapedText.split('\n').forEach(line => {
-        lines.push(line.replace(leadingWhiteSpaceRegEx, ''))
-      });
-      element.innerHTML = lines.join('\n').replace(/ *$/, ''); 
-    });
-  }))
+  .pipe(dom(escapeUnescapedHtmlInsidePreBlocks))
   .pipe(htmlbeautify({
     indent_size: 2
   }))
@@ -60,3 +46,19 @@ gulp.task('build', gulp.parallel(
 ));
 
 gulp.task('default', gulp.series('clean', 'build'));
+
+function escapeUnescapedHtmlInsidePreBlocks() {
+  const pre = Array.from(this.querySelectorAll('pre'))
+  const code = Array.from(this.querySelectorAll('code'))
+  pre.concat(code).forEach(element => {
+    const text = element.innerHTML;
+    const escapedText = text.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    const leadingWhiteSpace = escapedText.match(/^ */)[0].length
+    const lines = []
+    const leadingWhiteSpaceRegEx = new RegExp(`^${Array(leadingWhiteSpace).join(' ')}`)
+    escapedText.split('\n').forEach(line => {
+      lines.push(line.replace(leadingWhiteSpaceRegEx, ''))
+    });
+    element.innerHTML = lines.join('\n').replace(/ *$/, ''); 
+  });
+}
