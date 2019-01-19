@@ -2,7 +2,7 @@
 _An experiment; a demo; a guide_
 
 The purpose of this site is to document it's own construction; see it in action at
-[http://alexanderbird.software]
+http://css-can-do-that.alexanderbird.software
 
 # Building from source
 
@@ -10,5 +10,7 @@ The purpose of this site is to document it's own construction; see it in action 
     npm run build
 
 # Running the site
-The static files are placed in the `.html` folder. You can access them from there
-directly, or run `npm start` to start an http server in that folder.
+
+    npm start
+
+Starts http-server from the `.html` build directory.
